@@ -269,12 +269,12 @@ impl Evidence {
     }
 
     /// Get Secure Monitor part of the report
-    pub fn security_monitor(&self) -> SecurityMonitorReport {
+    pub fn security_monitor(&self) -> SecurityMonitorReport<'_> {
         return SecurityMonitorReport(&self.raw[self.soffs .. self.doffs]);
     }
 
     /// Get device part of the report
-    pub fn device_identifier(&self) -> DeviceIdentifier {
+    pub fn device_identifier(&self) -> DeviceIdentifier<'_> {
         return DeviceIdentifier(&self.raw[self.doffs .. ]);
     }
 

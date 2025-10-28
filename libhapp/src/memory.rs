@@ -127,7 +127,7 @@ impl MemoryArea {
 	}
     }
 
-    fn alloc_page(&mut self) -> Result<Page, Error> {
+    fn alloc_page(&mut self) -> Result<Page<'_>, Error> {
         if self.free_offset + Page::SIZE > self.size {
             // TODO: Memory allocation failed (device or allocator)
             // or run out of allocated memory:
@@ -293,7 +293,7 @@ impl <'a>Memory<'a> {
     pub(crate) fn alloc_page(&mut self,
                              _vaddr: uintptr,
                              mode: PageMode)
-                             -> Result<Option<Page>, Error> {
+                             -> Result<Option<Page<'_>>, Error> {
 
         let memory =
             if mode == PageMode::SharedFull {
