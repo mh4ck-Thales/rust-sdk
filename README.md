@@ -12,15 +12,16 @@ The SDK is designed to be compatible with the
           the API or its implementation has not been properly verified yet.
           Therefore, **Do not use in production!**
 
-# Prequisites
+# Prerequisites
 
 ## Bulding Keystone
 
-The Rust SDK can be used with Keystone enclave. Use either custom
-version or upstream Keystone. The custom version contains few patches
-that have not yet been merged to the upstream (e.g., support for the
-StarFive VisionFive2 development board). The code has been tested with
-QEMU and StarFive VisionFive2 development board.
+The Rust SDK is compatible with the Keystone enclave. You can use
+either the upstream Keystone version or a custom fork. The custom
+version includes patches that are not yet merged into the upstream
+repository. For example, support for the StarFive VisionFive2
+development board. This setup has been tested with both QEMU and the
+StarFive VisionFive2 board.
 
 ### Custom Keystone repository
 
@@ -29,7 +30,7 @@ Build for QEMU:
 
     make
 
-Alternatively build for StarFive VisionFive2 development board:
+Alternatively, build for the StarFive VisionFive2 development board:
 
     scripts/build_visionfive2.sh
 
@@ -41,8 +42,8 @@ for QEMU environment using instructions given in
 
 ## Install RISC-V toolchains
 
-If you are using Ubuntu make sure that you have basic support for
-development environment by installing the following essiential packages:
+If you are using Ubuntu, make sure that you have basic development
+environment support by installing the following essiential packages:
 
     sudo apt install build-essential
     sudo apt install crossbuild-essential-riscv64
@@ -55,7 +56,8 @@ Install also toolchain files:
 ## Install Rust
 
 This project uses an experimental Rust feature (per-package-target)
-that is only available in Rust's nightly build. Use
+that is only available in Rust's nightly build. The current version
+has been tested with Rust 1.92. Use
 [rustup](https://www.rust-lang.org/tools/install) to install the Rust
 environment and add required RISC-V targets.
 
@@ -88,7 +90,7 @@ Using make:
 
 # More information
 
-An old conference paper is describing the first version:
+The first version is described in an early conference paper:
 
 Julku, J. and Kylänpää, M. (2023). **Towards a Rust SDK for Keystone
 Enclave Application Development**. In *Proceedings of the 9th
